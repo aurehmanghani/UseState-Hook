@@ -6,6 +6,9 @@ const UseEffectTest = () => {
   const [todos,setTodos] = useState([])
   const [greetings, setGreetings] = useState('')
   
+  const handleChange = event =>{
+    setGreetings(event.target.value)
+  }
 
   return (
     <div>
@@ -25,7 +28,7 @@ const UseEffectTest = () => {
     </button>
     <hr/>
     <p>Greetings : {greetings}</p>
-    <input type="text" value={greetings} onChange={event => setGreetings(event.target.value)}/>
+    <input type="text" value={greetings} onChange={handleChange}/>
     </div>
   );
 }
