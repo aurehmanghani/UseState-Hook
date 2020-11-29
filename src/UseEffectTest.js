@@ -9,7 +9,11 @@ const UseEffectTest = () => {
   const handleChange = event =>{
     setGreetings(event.target.value)
   }
-
+  const Button = ({ handleClick = () => console.log('Default') }) => (
+    <button type="button" onClick={handleClick}>
+      Call Back Button
+    </button>
+  );
   return (
     <div>
     <p>Number of clicks : {count}</p>
@@ -29,6 +33,9 @@ const UseEffectTest = () => {
     <hr/>
     <p>Greetings : {greetings}</p>
     <input type="text" value={greetings} onChange={handleChange}/>
+    
+    <hr/>
+    <Button/>
     </div>
   );
 }
